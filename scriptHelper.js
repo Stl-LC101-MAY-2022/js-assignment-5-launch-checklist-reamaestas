@@ -2,6 +2,12 @@
 require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
+    let planetName = document.getElementById("name");
+    let diameter = document.getElementById("diameter");
+    let star = document.getElementById("star");
+    let distance = document.getElementById("distance");
+    let moons = document.getElementById("moons");
+    let imageUrl = document.getElementById("imageUrl");
    // Here is the HTML formatting for our mission target div.
    /*
                 <h2>Mission Destination</h2>
@@ -60,21 +66,20 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             cargoStatus.innerHTML = "Cargo mass low enough for launch.";
         }
     }
-
-
-
+}
 async function myFetch() {
     let planetsReturned;
-
     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
         return response.json();
         });
-
     return planetsReturned;
 }
 
 function pickPlanet(planets) {
+    let selectedPlanet = Math.floor(Math.random()*planets.length);
+    return planets[selectedPlanet];
 }
+
 
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
