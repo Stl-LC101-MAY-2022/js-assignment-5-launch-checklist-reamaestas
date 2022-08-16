@@ -27,11 +27,11 @@ function validateInput(testInput) {
   }
 }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
+function formSubmission(document, list, pilot,copilot, fuelLevel, cargoMass) {
     let pilotStatus = document.getElementById("pilotStatus");
     let copilotStatus = document.getElementById("copilotStatus");
-    let fuelLevel = document.getElementById("fuelLevel");
-    let cargoMass = document.getElementById("cargoMass");
+    let fuelLevelStatus = document.getElementById("fuelLevel");
+    let cargoMassStatus = document.getElementById("cargoMass");
 
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoMass) === "Empty") {
         alert("All fields are required!");
@@ -47,18 +47,18 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
         if (fuelLevel < 10000) {
             launchStatus.innerHTML = "Shuttle not ready for launch.";
             launchStatus.style.color = "red";
-            fuelLevel.innerHTML = "Fuel level too low for launch.";
+            fuelLevelStatus.innerHTML = "Fuel level too low for launch.";
         }
         if (cargoMass > 10000) {
             launchStatus.innerHTML = "Shuttle not ready for launch.";
             launchStatus.style.color = "red";
-            cargoMass.innerHTML = "Cargo mass not low enough for launch.";
+            cargoMassStatus.innerHTML = "Cargo mass not low enough for launch.";
         }
         else {
             launchStatus.innerHTML = "Shuttle ready for launch.";
             launchStatus.style.color = "green";
-            fuelLevel.innerHTML = "Fuel level high enough for launch.";
-            cargoMass.innerHTML = "Cargo mass low enough for launch.";
+            fuelLevelStatus.innerHTML = "Fuel level high enough for launch.";
+            cargoMassStatus.innerHTML = "Cargo mass low enough for launch.";
         }
     }
 }
