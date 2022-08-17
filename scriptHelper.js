@@ -30,13 +30,12 @@ function validateInput(testInput) {
 function formSubmission(document, list, pilot,copilot, fuelLevel, cargoMass) {
     let pilotStatus = document.getElementById("pilotStatus");
     let copilotStatus = document.getElementById("copilotStatus");
-    let fuelLevelStatus = document.getElementById("fuelLevel");
-    let cargoMassStatus = document.getElementById("cargoMass");
+    let fuelLevelStatus = document.getElementById("fuelStatus");
+    let cargoMassStatus = document.getElementById("cargoStatus");
 
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoMass) === "Empty") {
         alert("All fields are required!");
-    }
-    if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoMass) === "Not a Number") {
+    }else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoMass) === "Not a Number") {
         alert("Invalid Input!");
         }    
     else {
